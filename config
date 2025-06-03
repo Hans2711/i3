@@ -38,6 +38,9 @@ font pango:FiraCode Nerd Font Mono 10
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id ~/.config/i3/scripts/adjust_mouse.sh
 
+# Load DUNST
+exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+
 # Clipboard manager
 exec --no-startup-id copyq
 
@@ -130,6 +133,16 @@ bindsym $mod+Control+Shift+h move workspace to output left
 bindsym $mod+Control+Shift+l move workspace to output right
 bindsym $mod+Control+Shift+j move workspace to output down
 bindsym $mod+Control+Shift+k move workspace to output up
+
+###############################################################################
+# WORKSPACE SCROLLING WITH MOUSE WHEEL  ( \o/ )
+###############################################################################
+
+# Hold $mod and scroll ↑  →  previous workspace on this monitor
+bindsym $mod+Shift+Tab workspace prev
+
+# Hold $mod and scroll ↓  →  next workspace on this monitor
+bindsym $mod+Tab workspace next
 
 ###############################################################################
 # FULLSCREEN & LAYOUT TOGGLES ¯\_(ツ)_/¯
